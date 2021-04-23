@@ -1,0 +1,12 @@
+SELECT *
+FROM movies
+WHERE year BETWEEN 1970 AND 1979
+AND imdb_rating > 8;   // This will collect all the movies relased between 1970 and 1979 and also with rating more than 8.
+
+
+//Using AND, write a new query that selects all movies made prior to 1985 that are also in the horror genre
+
+SELECT *
+FROM movies
+WHERE year < 1985
+AND genre = 'horror';
