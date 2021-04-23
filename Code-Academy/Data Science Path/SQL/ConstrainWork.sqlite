@@ -1,0 +1,5 @@
+ CREATE TABLE awards(
+   id INTEGER PRIMARY KEY,   //Primary key
+   recipient TEXT NOT NULL,   // Null value is not acceptable
+   award_name TEXT DEFAULT 'Grammy' // Deafult award name Grammy
+ );
