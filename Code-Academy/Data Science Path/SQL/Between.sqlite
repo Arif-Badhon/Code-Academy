@@ -1,0 +1,2 @@
+SELECT * FROM movies
+WHERE year BETWEEN 1970 AND 1979; \\BETWEEN operator is being used to filter the result set to only include movies with years in 1970-1979
