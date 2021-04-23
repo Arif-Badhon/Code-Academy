@@ -1,3 +1,7 @@
 SELECT *
 FROM movies
-WHERE name LIKE 'Se_en'   //It will select all the movies name similar to Se_en
+WHERE name LIKE 'Se_en';   //It will select all the movies name similar to Se_en
+
+SELECT * 
+FROM movies
+WHERE name LIKE 'The %';  // It will select all the movies name starting with 'the'
