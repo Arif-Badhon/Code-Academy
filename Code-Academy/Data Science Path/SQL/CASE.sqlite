@@ -1,0 +1,14 @@
+//Select the name column and use a CASE statement to create the second column that is:
+
+//‘Chill’ if genre = 'romance'
+//‘Chill’ if genre = 'comedy'
+//‘Intense’ in all other cases
+//Optional: Rename the whole CASE statement to ‘Mood’ using AS.
+
+SELECT name,
+CASE
+  WHEN genre = 'romance' THEN 'Chill'
+  WHEN genre = 'comedy' THEN 'Chill'
+  ELSE 'Intense'
+END AS 'Mood'
+FROM movies;
