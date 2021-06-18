@@ -36,7 +36,8 @@ numerical_columns = numerical_features.columns
  
 ct = ColumnTransformer([("only numeric", StandardScaler(), numerical_columns)], remainder='passthrough')
 
-#Fit your instance ct of ColumnTransformer to the training data and at the same time transform it by using the ColumnTransformer.fit_transform() method. Assign the result to a variable called features_train_scaled.
+#Fit your instance ct of ColumnTransformer to the training data and at the same time transform it by using the ColumnTransformer.fit_transform() method. 
+#Assign the result to a variable called features_train_scaled.
 features_train_scaled = ct.fit_transform(features_train)
 
 #ransform your test data instance features_test using the trained ColumnTransformer instance ct. Assign the result to a variable called features_test_scaled.
@@ -45,7 +46,8 @@ features_test_scaled = ct.fit_transform(features_test)
 #Create an instance of the tensorflow.keras.models.Sequential model called my_model.
 my_model = Sequential()
 
-#Create the input layer to the network model using tf.keras.layers.InputLayer with the shape corresponding to the number of features in your dataset. Assign the resulting input layer to a variable called input.
+#Create the input layer to the network model using tf.keras.layers.InputLayer with the shape corresponding to the number of features in your dataset. 
+#Assign the resulting input layer to a variable called input.
 input = InputLayer(input_shape = (features.shape[1], ))
 
 #Add the input layer from the previous step to the model instance my_model.
@@ -69,7 +71,8 @@ my_model.compile(loss = 'mse', metrics = ['mae'], optimizer = opt)
 #Training the model
 my_model.fit(features_train_scaled, labels_train, epochs = 50, batch_size = 5, verbose = 1)
 
-#Using the Sequential.evaluate() method, evaluate your trained model on the preprocessed test data set, and with the test labels. Set verbose to 0. Store the result of the evaluation in two variables: res_mse and res_mae.
+#Using the Sequential.evaluate() method, evaluate your trained model on the preprocessed test data set, and with the test labels. 
+#Set verbose to 0. Store the result of the evaluation in two variables: res_mse and res_mae.
 res_mse, res_mae = my_model.evaluate(features_test_scaled, labels_test, verbose = 0)
 
 #Print your final loss (RMSE) and final metric (MAE) to check the predictive performance on the test set.
